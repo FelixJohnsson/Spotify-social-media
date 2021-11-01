@@ -1,5 +1,6 @@
 :root{
     --spotify-black: #191414;
+    --spotify-grey: #3a3a3a;
     --spotify-green: #1DB954;
     --spotify-white: rgb(248, 248, 248);
 }
@@ -32,11 +33,38 @@ div {
     height: 94vh;
 }
 #left-wrapper{
-    height: 60vh;
+    height: 50vh;
+    border-right: solid var(--spotify-green) 1px;
+    border-bottom: solid var(--spotify-green) 1px;
+    border-radius: 10px;
+    padding-top: 100px;
+}
+.left-wrapper-inside{
+    margin-left: 70px;
+    border-bottom: solid var(--spotify-grey) 1px;
+    padding: 10px;
 }
 #right-wrapper{
+    overflow-y: scroll;
     height: 94vh;
+    border-left: solid var(--spotify-green) 1px;
+    border-bottom: solid var(--spotify-green) 1px;
+    border-radius: 10px;
+
+
+    padding: 100px 0px 0px 80px;
 }
+.playlist-card{
+    width: 100%;
+    height: 200px;
+    background-color: red;
+    margin-bottom: 40px;
+}
+.playlist-card img{
+    height: 200px;
+
+}
+
 #new-event-div{
     height: 120px;
 }
