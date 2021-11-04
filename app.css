@@ -1,0 +1,234 @@
+html{
+    height: 100%;
+}
+
+body{
+    --spotify-color: #1DB954;
+    --spotify-background: #333333;
+    --spotify-module: #282828;
+    --spotify-module-dark: #181818;
+    color: white;
+    font-family: gotham light;
+    background-image: linear-gradient(180deg, #535353 0, #121212);
+    background-attachment: fixed;
+    overflow-y: hidden;
+}
+
+.container{
+    margin: auto !important;
+    max-width: 80%;
+    height: 100vh;
+    max-width: 1800px;
+}
+
+#navmenu{
+    background-color: var(--spotify-module);
+    margin-top: 20px;
+}
+
+.active{
+    color: var(--spotify-color) !important;
+}
+
+@media screen and (max-width: 1385px) {
+    #navmenu li a{
+      font-size: 0px;
+    }
+  }
+
+@media screen and (max-width: 990px) {
+    #navmenu ul {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+#logo{
+    padding: 40px 0px 25px 0px;
+    border-bottom: 1px solid var(--spotify-background);
+}
+
+#navmenu li{
+    display: inline-block;
+    list-style: none;
+    font-size: 17px;
+    padding: 20px 0px 0px 0px;
+    width: 100%;
+}
+
+#navmenu div{
+   margin: auto;
+   width:50%
+}
+
+#navmenu a {
+    text-decoration: none;
+    color: white;
+}
+#navmenu a:hover {
+    color: var(--spotify-color);
+    transition: color 100ms ease-out;
+}
+
+#navmenu span{
+    padding-right: 10px;
+}
+
+#feed{
+    background-color: var(--spotify-module-dark);
+    margin-top: 20px;
+    border-left: 2px solid var(--spotify-background);
+}
+
+h1{
+    margin-top: 40px;
+}
+
+#username-input{
+    background-color: var(--spotify-module);
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 20%;
+    color:white;
+}
+
+#messagebox_input{
+    padding-bottom: 10px;
+    
+}
+#input{
+    color: white;
+    resize: none; 
+    box-shadow:none;
+}
+
+#messagebox{
+    background-color: var(--spotify-module);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+#publishbutton button{
+    border-radius: 20px;
+    background-color: var(--spotify-color);
+    border: none;
+    padding: 8px;
+}
+
+.form-control, .form-control:focus {
+    background-color: var(--spotify-module);
+    border:none;
+    border-color: var(--spotify-module) !important;
+}
+
+#messageboard{
+    overflow-y: scroll;
+    height: 70vh;
+}
+#messageboard article{
+    background-color: var(--spotify-module);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px   
+}
+
+#messageboard ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+article li:hover{
+    color: var(--spotify-color);
+    cursor:pointer;
+    transition: color 100ms ease-out;
+}
+
+#widgets{
+    background-color: var(--spotify-module-dark);
+    border-left: 2px solid var(--spotify-background);
+    border-top: 1px solid var(--spotify-background);
+    height: 100vh;
+    margin-top: 20px;
+}
+
+h2{
+    font-size: 20px;
+    /* border-bottom:1px solid var(--spotify-background); */
+    border-width: 300%;
+}
+
+#widgets iframe{
+    margin-top: 10px;
+    width:100%;
+    border-radius: 10px;
+    height: 30%;
+}
+
+.widgets_input{
+    display: flex;
+    background-color: var(--spotify-module);
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;  
+}
+
+.widgets_input input{
+    background-color: var(--spotify-module);
+    border: none;
+    width: 100%;
+    border-radius: 20px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+}
+
+.widgets_widgetContainer {
+    border-top: 1px solid var(--spotify-module);
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.widgets_widgetContainer a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.widgets_widgetContainer a:hover {
+    color: var(--spotify-color)
+}
+
+.widgets_widgetContainer p{
+    color: grey;
+    text-decoration: none;
+    font-size: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.newsfeed{
+    overflow-y: scroll;
+    height: 55%;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+
+
+

@@ -1,144 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Spotify Socials</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="container-fluid">
-        <div class="row" id="navbar">
-            <div class="col-12">
-              <p></p>
-            </div>
-          </div>
-        <div class="row" id="content-wrapper">
-            <div class="col-4">
-              <div class="container">
-                <div class="col-8 offset-md-4" id="left-wrapper">
-                    <div class="left-wrapper-inside">
-                        <p>Home</p>
-                    </div>
-                    <div class="left-wrapper-inside">
-                        <p>Explore</p>
-                    </div>
-                    <div class="left-wrapper-inside">
-                        <p>Settings</p>
-                    </div>
-                    <div class="left-wrapper-inside">
-                        <p>Profile</p>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" id="navmenu">
                 <div>
-                    <p class="large-title">Home</p>
-                    <hr>
+                    <img id="logo" class="img-fluid" src="./Graphics/Spotifan_Logo.png" alt="Spotifan">
                 </div>
-                <div id="new-event-div">
-                    <input type="text" placeholder="What's up?">
-                    <button class="btn btn-success">
-                        Submit
-                    </button>
+                <div class="navlist">
+                    <ul>
+                        <li><span class="material-icons">home</span>
+                            <a class="active" href="">Home</a>
+                        </li>
+                        <li><span class="material-icons">public</span>
+                            <a href="">Explore</a>
+                        </li>
+                        <li><span class="material-icons">notifications</span>
+                            <a href="">Notifications</a>
+                        </li>
+                        <li><span class="material-icons">email</span>
+                            <a href="">Messages</a>
+                        </li>
+                        <li><span class="material-icons">bookmark</span>
+                            <a href="">Bookmarks</a>
+                        </li>
+                        <li><span class="material-icons">format_list_bulleted</span>
+                            <a href="">Lists</a>
+                        </li>
+                        <li><span class="material-icons">person</span>
+                            <a href="">Profile</a>
+                        </li>
+                        <li><span class="material-icons">more_horiz</span>
+                            <a href="">More</a>
+                        </li>
+                    </ul>
                 </div>
-                <div id="user-content-div">
-                    <div class="custom-card">
-                        <div class="card-title">
-                            <div class="card-title-left">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                </svg>
+            </div>
+            <div class="col-lg-6" id="feed">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Home</h1>
+                            <button onclick="update_tweet()">Update</button>
+                            <div>
+                                <input type=text id="username-input" placeholder="username">
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-award" viewBox="0 0 16 16">
-                                <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
-                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-                              </svg>
-                            <p>Spotify Sweden</p>
-                        </div>
-                        <div class="card-content">
-                            <p>Music plays a starring role in The Harder They Fall Sparkles Hear new songs from artists like 
-                                @sc
-                                , 
-                                @KidCudi
-                                , 
-                                @WHOISCONWAY
-                                 and more and watch exclusive clips with 
-                                @TheBullitts
-                                 and others on our Enhanced Album https://spotify.link/THTF
-                                 Wrap up your week with these new releases Wrapped present  
-
-                                 @macklemore
-                                  and #RyanLewis reunited for their new track Next Year, featuring 
-                                 @windsermusic
-                                  Dizzy symbol https://spotify.link/NextYear</p>
-                        </div>
-                    </div>
-                    <div class="custom-card">
-                        <div class="card-title">
-                            <div class="card-title-left">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                </svg>
+                            <div id="messagebox">
+                                <div id="messagebox_input" class="col-auto">
+                                    <label for="exampleFormControlTextarea1" class="form-label"></label>
+                                    <!-- <textarea class="form-control" rows="3"
+                                        placeholder="Message in a bottle"></textarea> -->
+                                </div>
+                                <div id="publishbutton" class="col-md-12">
+                                    <button class="btn btn-primary mb-3" onclick="post_tweet()">Publish</button>
+                                </div>
                             </div>
-
-                            <p>Felix Johnsson</p>
                         </div>
-                        <div class="card-content">
-                            <p>Dessa chokladbollar får en liten karamellsmak av att smöret först får puttra. Rulla chokladbollarna i kokos eller pärlsocker, det som du själv föredrar.</p>
+                        <h2>Trending</h2>
+                        <div id="messageboard" class="col-md-12 overflow-auto">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="container">
-                    <p>Trending playlists</p>
-                    <div class="col-8" id="right-wrapper">
-                        
-                        <div class="playlist-card">
-                            <div class="playlist-card-image">
-                                <img src="./1.png">
-                            </div>
-                            <div class="playlist-card-title">
-                                <p>Pop mix</p>
-                            </div>
-                        </div>
-                        <div class="playlist-card">
-                            <div class="playlist-card-image">
-                                <img src="./2.png">
-                            </div>
-                            <div class="playlist-card-title">
-                                <p>All new indie</p>
-                            </div>
-                        </div>
-                        <div class="playlist-card">
-                            <div class="playlist-card-image">
-                                <img src="./3.png">
-                            </div>
-                            <div class="playlist-card-title">
-                                <p>Rock this</p>
-                            </div>
-                        </div>
-                        <div class="playlist-card">
-                            <div class="playlist-card-image">
-                                <img src="./4.png">
-                            </div>
-                            <div class="playlist-card-title">
-                                <p>Alternative 60's</p>
-                            </div>
+            <div class="col-lg-3 d-none d-lg-block" id="widgets">
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <div class="widgets_input">
+                            <span class="material-icons widgets_searchIcon">search</span>
+                            <input type="text" placeholder="Search Spotifan">
                         </div>
                     </div>
-                  </div>
-            </div>
-          </div>
+                </nav>
+                <h2>Top List</h2>
+                <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWTMYgB8TqtmR" frameborder="0"
+                    allowtransparency="true" allow="encrypted-media"></iframe>
+                <h2>News</h2>
+                <div class="newsfeed">
 
-      </div>
+                    <div class="widgets_widgetContainer">
+                        <p>YOUR OWN WORDS</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-21/spotify-mic-check-welcomes-fresh-finds-artist-julia-wolf-to-share-her-story/%22%3E">
+                            ‘Spotify: Mic Check’ Welcomes Fresh Finds Artist Julia Wolf To Share Her Story
+                        </a>
+                    </div>
+                    <div class=" widgets_widgetContainer">
+                        <p>HALLOWEEN HAPPENINGS</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-21/the-spooky-spotify-podcasts-greenroom-live-events-and-songs-sure-to-give-you-goosebumps-this-scary-season/%22%3E">
+                            The Spooky Spotify Podcasts, Greenroom Live Events, and Songs Sure To Give You Goosebumps
+                            This Scary
+                            Season
+                        </a>
+                    </div>
+                    <div class=" widgets_widgetContainer">
+                        <p>INSIDE SPOTIFY</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-27/spotify-reports-third-quarter-2021-earnings/%22%3E">
+                            Spotify Reports Third Quarter 2021 Earnings
+                        </a>
+                    </div>
+                    <div class="widgets_widgetContainer">
+                        <p>WHAT'S NEW</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-21/spotify-mic-check-welcomes-fresh-finds-artist-julia-wolf-to-share-her-story/%22%3E">
+                            Listen—and Watch—Your Favorite Creators as Video Podcasting Comes to Spotify
+                        </a>
+                    </div>
+                    <div class="widgets_widgetContainer">
+                        <p>OVER THE MOON</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-26/the-global-gen-z-influenced-rise-of-horoscope-and-astrology-podcasts-on-spotify/%22%3E">
+                            The Global, Gen Z–Influenced Rise of Horoscope and Astrology Podcasts on Spotify
+                        </a>
+                    </div>
+                    <div class="widgets_widgetContainer">
+                        <p>WOMEN AT FULL VOLUME</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-29/equal-artist-of-the-month-stayc-encourages-women-artists-to-express-themselves/%22%3E">
+                            EQUAL Artist of the Month STAYC Encourages Women Artists To Express Themselves
+                        </a>
+                    </div>
+                    <div class="widgets_widgetContainer">
+                        <p>GENRE ON THE RISE</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-22/what-is-rap-in-poland-artist-young-leosia-and-her-fellow-rappers-are-ready-with-an-answer/%22%3E">
+                            What Is Rap? In Poland, Artist Young Leosia and Her Fellow Rappers Are Ready With an Answer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
